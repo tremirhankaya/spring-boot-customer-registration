@@ -1,53 +1,50 @@
-Tamam kanka, anladım. O formata uyarak bizim projemiz için de güzel bir README hazırlayalım. Başlıksız, düz metin gibi olacak ama vurgulu kısımlarla okuması kolay.
-
-```
-Spring Boot Customer Registration System
+pring Boot Customer Registration System
 ---
 This project is a simple demonstration of fundamental CRUD (Create, Read, Update, Delete) operations using **Spring Boot** and **Spring Data JPA**. The main goal of this project is to practice and solidify the basics of the **Spring MVC** pattern and **Thymeleaf**, which are standard for web application development in Spring.
 
 Project Highlights
 ---
-* **Spring Boot**: The project is built on the Spring Boot framework for rapid application development.
-* **Spring MVC**: Uses the Model-View-Controller pattern to separate concerns and create a web interface.
-* **Thymeleaf**: A server-side templating engine used for dynamic HTML pages.
-* **Spring Data JPA**: Uses _JpaRepository_ for efficient data access with minimal boilerplate code.
-* **Service Layer**: A layer of abstraction is introduced (_CustomerService_) to encapsulate business logic.
-* **PostgreSQL**: Uses a PostgreSQL database to store customer data.
+- **Spring Boot**: The project is built on the Spring Boot framework for rapid application development.
+- **Spring MVC**: Uses the Model-View-Controller pattern to separate concerns and create a web interface.
+- **Thymeleaf**: A server-side templating engine used for dynamic HTML pages.
+- **Spring Data JPA**: Uses _JpaRepository_ for efficient data access with minimal boilerplate code.
+- **Service Layer**: A layer of abstraction is introduced (_CustomerService_) to encapsulate business logic.
+- **PostgreSQL**: Uses a PostgreSQL database to store customer data.
 
 Getting Started
 ---
 Prerequisites
 
-* **Java 21** or higher
-* **Maven**
-* **PostgreSQL** database
+- **Java 21** or higher
+- **Maven**
+- **PostgreSQL** database
 
 Setup
 
-1.  **Clone the repository:**
-    git clone https://github.com/emirhankaya/spring-boot-customer-registration.git
-2.  **Database Configuration:** The project uses a PostgreSQL database. You'll need to create a `application-local.properties` file in `src/main/resources` and add your connection details there.
-    _spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name_
-    _spring.datasource.username=your_username_
-    _spring.datasource.password=your_password_
-3.  **Run the application:** You can run the main application class directly from your IDE or use Maven.
-    _mvn spring-boot:run_
+1. **Clone the repository:**
+   git clone https://github.com/emirhankaya/spring-boot-customer-registration.git
+
+2. **Database Configuration:** The project uses a PostgreSQL database. You'll need to create a `application-local.properties` file in `src/main/resources` and add your connection details there.
+   _spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name_
+   _spring.datasource.username=your_username_
+   _spring.datasource.password=your_password_
+
+3. **Run the application:** You can run the main application class directly from your IDE or use Maven.
+   _mvn spring-boot:run_
 
 Web Endpoints
 ---
-* _GET /_: Retrieves and displays a list of all customers.
-* _GET /customers/showFormForAdd_: Displays a form to add a new customer.
-* _GET /customers/showFormForUpdate?id={customerId}_: Displays a form pre-filled with an existing customer's data for editing.
-* _POST /customers/save_: Handles the creation or update of a customer.
-* _POST /customers/delete_: Deletes a customer by their ID.
+- _GET /_: Retrieves and displays a list of all customers.
+- _GET /customers/showFormForAdd_: Displays a form to add a new customer.
+- _GET /customers/showFormForUpdate?id={customerId}_: Displays a form pre-filled with an existing customer's data for editing.
+- _POST /customers/save_: Handles the creation or update of a customer.
+- _POST /customers/delete_: Deletes a customer by their ID.
 
 Project Structure
 ---
-The project follows a layered architecture to demonstrate the core concepts:
-* _com.emirhan.customer.customer_registration_system.model_: Contains the _Customer_ JPA entity.
-* _com.emirhan.customer.customer_registration_system.repository_: Contains the _CustomerRepository_ interface.
-* _com.emirhan.customer.customer_registration_system.service_: Contains the _CustomerService_ interface and its implementation.
-* _com.emirhan.customer.customer_registration_system.controller_: Contains the _CustomerController_ handling web requests.
+- _com.emirhan.customer.customer_registration_system.model_: Contains the _Customer_ JPA entity.
+- _com.emirhan.customer.customer_registration_system.repository_: Contains the _CustomerRepository_ interface.
+- _com.emirhan.customer.customer_registration_system.service_: Contains the _CustomerService_ interface and its implementation.
+- _com.emirhan.customer.customer_registration_system.controller_: Contains the _CustomerController_ handling web requests.
 
 Feel free to explore the code to understand how each layer works together to create a functional web application.
-```
