@@ -3,9 +3,11 @@ package com.emirhan.customer.customer_registration_system.controller;
 import com.emirhan.customer.customer_registration_system.model.Customer;
 import com.emirhan.customer.customer_registration_system.repository.CustomerRepository;
 import com.emirhan.customer.customer_registration_system.service.CustomerService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,9 +31,15 @@ public class CustomerController {
 }
 
 @PostMapping("/customers/save")
-    public String saveCustomers(Customer customer) {
+    public String saveCustomers(@Valid Customer customer, BindingResult bindingResult) {
+    if (bindingResult.hasErrors()){
+        return "customer-form";
+    }else{
         customerService.save(customer);
         return "redirect:/";
+
+    }
+
 }
 
 @GetMapping("/customers/showFormForUpdate")

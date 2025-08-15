@@ -1,7 +1,9 @@
 package com.emirhan.customer.customer_registration_system.model;
 
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "customers")
@@ -10,15 +12,16 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private
     Long id;
-
+    @Pattern(regexp = "[a-zA-ZçÇğĞıİöÖşŞüÜ]+", message = "Name must contain only letters.")
+    @NotBlank(message = "First name is required")
     @Column(nullable = false)
-    private
-    String firstName;
+    private String firstName;
+    @Pattern(regexp = "[a-zA-ZçÇğĞıİöÖşŞüÜ]+", message = "Name must contain only letters.")
+    @NotBlank(message = "Last name is required")
     @Column(nullable = false)
-    private
-    String lastName;
-    @Column(nullable = false)
-    private
+    private String lastName;
+    @NotBlank(message = "E-mail is required")
+    @Column(nullable = false) private
     String email;
 
     public Customer() {
