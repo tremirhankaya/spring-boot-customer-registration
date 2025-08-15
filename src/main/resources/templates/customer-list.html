@@ -5,6 +5,23 @@
     <title>Customer List</title>
 </head>
 <body>
+<table>
+<tr th:each="customer : ${customers}">
+    <td th:text="${customer.id}"></td>
+    <td th:text="${customer.firstName}"></td>
+    <td th:text="${customer.lastName}"></td>
+    <td th:text="${customer.email}"></td>
+    <td> <a th:href="@{/customers/showFormForUpdate(id=${customer.id})}">Update </a></a></td>
+    <td>
+        <form th:action="@{/customers/delete}" method="post">
+            <input type="hidden" name="id" th:value="${customer.id}" />
+            <input type="submit" value="Delete" class="btn btn-danger"
+                   onclick="if (!(confirm('Are you sure to delete this Customer'))) return false">
+        </form>
+    </td>
+</tr>
+</table>
+<a th:href="@{/customers/showFormForAdd}">Add New Customer</a>
 
 </body>
 </html>
